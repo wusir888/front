@@ -4,17 +4,17 @@
 
             <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'" style="backgroundColor: rgba(225, 225, 225, 1)">
                 <el-form class="login-form" label-position="left" :label-width="3 == 3 ? '56px' : '0px'">
-                    <div class="title-container"><h3 class="title" style="color: rgba(255, 69, 0, 1)">校园商铺管理系统</h3></div>
+                    <div class="title-container"><h3 class="title" style="color: #1E90FF">校园商铺管理系统</h3></div>
                     <el-form-item :label="3 == 3 ? '用户名' : ''" :class="'style'+3">
-                        <span v-if="3 != 3" class="svg-container" style="color:rgba(255, 69, 0, 1);line-height:50px"><svg-icon icon-class="user" /></span>
+                        <span v-if="3 != 3" class="svg-container" style="color:#1E90FF;line-height:50px"><svg-icon icon-class="user" /></span>
                         <el-input placeholder="请输入用户名" name="username" type="text" v-model="rulesForm.username" />
                     </el-form-item>
                     <el-form-item :label="3 == 3 ? '密码' : ''" :class="'style'+3">
-                        <span v-if="3 != 3" class="svg-container" style="color:rgba(255, 69, 0, 1);line-height:50px"><svg-icon icon-class="password" /></span>
+                        <span v-if="3 != 3" class="svg-container" style="color:#1E90FF;line-height:50px"><svg-icon icon-class="password" /></span>
                         <el-input placeholder="请输入密码" name="password" type="password" v-model="rulesForm.password" />
                     </el-form-item>
                     <el-form-item v-if="0 == '1'" class="code" :label="3 == 3 ? '验证码' : ''" :class="'style'+3">
-                        <span v-if="3 != 3" class="svg-container" style="color:rgba(255, 69, 0, 1);line-height:50px"><svg-icon icon-class="code" /></span>
+                        <span v-if="3 != 3" class="svg-container" style="color:#1E90FF;line-height:50px"><svg-icon icon-class="code" /></span>
                         <el-input placeholder="请输入验证码" name="code" type="text" v-model="rulesForm.code" />
                         <div class="getCodeBt" @click="getRandCode(4)" style="height:50px;line-height:50px">
                             <span v-for="(item, index) in codes" :key="index" :style="{color:item.color,transform:item.rotate,fontSize:item.size}">{{ item.num }}</span>
@@ -29,10 +29,10 @@
                                 :label="item.roleName"
                         >{{item.roleName}}</el-radio>
                     </el-form-item>
-                    <el-button type="primary" @click="login()" class="loginInBt" style="padding:0;font-size:16px;border-radius:15px;height:44px;line-height:44px;width:100%;backgroundColor:rgba(255, 69, 0, 1); borderColor:rgba(255, 69, 0, 1); color:rgba(255, 255, 255, 1)">{{'2' == '1' ? '登录' : 'login'}}</el-button>
+                    <el-button type="primary" @click="login()" class="loginInBt" style="padding:0;font-size:16px;border-radius:15px;height:44px;line-height:44px;width:100%;backgroundColor:#1E90FF; borderColor:#1E90FF; color:rgba(255, 255, 255, 1)">{{'2' == '1' ? '登录' : 'login'}}</el-button>
                     <el-form-item class="setting">
-				<div style="color:rgba(25, 169, 123, 1)" class="register" @click="register('shangjia')">商家注册</div>
-				<div style="color:rgba(25, 169, 123, 1)" class="register" @click="register('yonghu')">用户注册</div>
+				<div style="color:#1E90FF" class="register" @click="register('shangjia')">商家注册</div>
+				<div style="color:#1E90FF" class="register" @click="register('yonghu')">用户注册</div>
                     </el-form-item>
                 </el-form>
             </div>
@@ -99,11 +99,11 @@
                         el.style.lineHeight = "50px"
                     })
                     document.querySelectorAll('.loginIn .el-form-item__label').forEach(el=>{
-                        el.style.color = "rgba(255, 69, 0, 1)"
+                        el.style.color = "#1E90FF"
                     })
                     setTimeout(()=>{
                         document.querySelectorAll('.loginIn .role .el-radio__label').forEach(el=>{
-                            el.style.color = "rgba(255, 69, 0, 1)"
+                            el.style.color = "#1E90FF"
                         })
                     },350)
                 })
@@ -262,7 +262,7 @@
 
     & /deep/ input {
           background: transparent;
-          border: 0px;
+          border: 1px solid #1E90FF;
           -webkit-appearance: none;
           padding: 0 15px 0 30px;
           color: #fff;
@@ -274,6 +274,7 @@
 
 
     }
+
 
     .center {
         position: absolute;
@@ -392,6 +393,15 @@
     & /deep/ .el-radio {
           margin-right: 12px;
       }
+    }
+
+    // 新增：el-radio选中时的颜色为海蓝色
+    /deep/ .el-radio__input.is-checked .el-radio__inner {
+        border-color: #1E90FF;
+        background: #1E90FF;
+    }
+    /deep/ .el-radio__input.is-checked + .el-radio__label {
+        color: #1E90FF;
     }
 
     }
